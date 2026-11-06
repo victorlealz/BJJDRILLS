@@ -9,7 +9,7 @@ export function HomePage({ techniques, groups, logs, navigate }: { techniques: T
   const format = (d: string) => d.split('-').reverse().join('/')
   return <section>
     <header className="page-header"><div><p className="eyebrow">JIU-JITSU</p><h1>Drills</h1></div></header>
-    <div className="hero-actions"><button className="primary large" onClick={() => navigate('train')}>Gerar treino</button><button className="secondary large" onClick={() => navigate('history')}>Registrar drill</button></div>
+    <div className="hero-actions"><button className="primary large" onClick={() => navigate('train')}>Gerar treino</button><button className="secondary large" onClick={() => navigate('history')}>Ver histórico</button></div>
     <div className="stats-strip"><span><strong>{logs.length}</strong> drills</span><span><strong>{unique}</strong> técnicas</span><span><strong>{last ? format(last) : '—'}</strong> último treino</span></div>
     <section className="section"><h2>Para revisar</h2>{review.length ? <ul className="plain-list">{review.map(t => <li key={t.id}><span>{t.name}</span><small>{groups.find(g => g.id === t.group_id)?.name}</small></li>)}</ul> : <p className="empty">Registre seus primeiros drills para iniciar as revisões.</p>}</section>
   </section>

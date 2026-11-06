@@ -7,8 +7,8 @@ PWA mobile-first para organizar técnicas, gerar sessões de drill, registrar tr
 - Biblioteca editável de grupos e técnicas.
 - Técnicas com nome, grupo, nível (fundamental/avançada) e notas opcionais.
 - Geradores Aleatório, Fundamentos, Revisão e Avançado.
-- Seleção manual, geração por quantidade ou duração e timer offline.
-- Registro rápido de drill e histórico por data.
+- Seleção manual e geração por quantidade, sem timer embutido.
+- Registro das técnicas realizadas ao finalizar um treino e histórico por data.
 - Revisão baseada em técnicas nunca treinadas, tempo desde o último treino e frequência.
 - PWA instalável, app shell offline e sessão de treino temporária local.
 - Sincronização multi-dispositivo com fila offline, soft delete e last-write-wins.
@@ -95,7 +95,7 @@ A biblioteca padrão é criada uma única vez por conta. `profiles.library_initi
 
 ## Offline
 
-O service worker gerado pelo `vite-plugin-pwa` cacheia app shell e assets locais. Dados do usuário ficam no IndexedDB, não no cache. Depois do primeiro login/configuração e carregamento da biblioteca, pesquisa, edição, geração, timer, registro e consulta do histórico local funcionam sem rede. Alterações ficam na fila e são enviadas quando `online` volta.
+O service worker gerado pelo `vite-plugin-pwa` cacheia app shell e assets locais. Dados do usuário ficam no IndexedDB, não no cache. Depois do primeiro login/configuração e carregamento da biblioteca, pesquisa, edição, geração, registro e consulta do histórico local funcionam sem rede. Alterações ficam na fila e são enviadas quando `online` volta.
 
 A sessão de treino corrente é persistida em IndexedDB para reduzir perda caso a PWA seja fechada ou suspensa.
 
